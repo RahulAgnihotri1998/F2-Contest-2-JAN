@@ -1,41 +1,38 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello, World!</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-  <form id="employeeForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" required>
-    <br>
-    <label for="profession">Profession:</label>
-    <input type="text" id="profession" required>
-    <br>
-    <label for="age">Age:</label>
-    <input type="number" id="age" required>
-    <br>
-    <button type="button" id="addEmployeeBtn">Add Employee</button>
-    <br>
-    <p id="error" style="color: red;"></p>
-    <p id="success" style="color: green;"></p>
-</form>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Adding</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <h2>New Employees</h2>
+        <div class="boxes">
+        <div class="info">
+            <p>Enter Name</p><input type="text" id="name">
+        </div>
+        <div class="info">
+            <p>Enter Profession</p><input type="text" id="proffession">
+        </div>
+        <div class="info">
+            <p>Enter Age</p><input type="number" id="age" min="01">
+        </div>
+    </div>
+    </div>
+    <button onclick="add()">Add User</button>
 
-<table id="employeeTable">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Profession</th>
-            <th>Age</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody id="employeeList"></tbody>
-</table>
+    <p id="m"></p>
+    <div class="lower-text" >
+        <p>Added Employees</p>
+    </div>
 
-
-
-      <script src="script.js"></script>
-  </body>
+    
+       <table id="tb">
+        <p id="a">You have 0 Employees.</p>
+       </table>
+       <script src="./script.js"></script>
+</body>
 </html>

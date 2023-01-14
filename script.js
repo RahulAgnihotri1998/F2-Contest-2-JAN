@@ -1,90 +1,72 @@
-let employeeList = [];
-let employeeId = 1;
+const l = []
 
-// Add Employee button click event
-document.getElementById("addEmployeeBtn").addEventListener("click", function() {
-    // Get form input values
-    let name = document.getElementById("name").value;
-    let profession = document.getElementById("profession").value;
-    let age = document.getElementById("age").value;
+function add() {
+    const name = document.getElementById('name').value;
+    const proffession = document.getElementById('proffession').value;
+    const age = document.getElementById('age').value;
 
-    // Check if all fields are filled
-    if (name === "" || profession === "" || age === "") {
-        document.getElementById("error").innerHTML = "All fields are required";
-        document.getElementById("success").innerHTML = "";
+    console.log(name, proffession, age);
+
+
+    if (name === '' || proffession === '' || age === '') {
+        const m = document.getElementById('m')
+        m.style.color = 'red';
+
+        m.innerHTML = 'Error : Please Make sure All the fields are filled before adding in an employee !'
+        m.style.marginLeft = '30px';
     } else {
-        // Create employee object
-        let employee = {
-            id: employeeId,
-            name: name,
-            profession: profession,
-            age: age
-        };
+        m.innerHTML = 'Success : Employee Added!'
+        m.style.color = 'green';
+        m.style.marginLeft = '30px';
 
-        // Add employee object to array
-        employeeList.push(employee);
-
-        // Clear form input values
-        document.getElementById("name").value = "";
-        document.getElementById("profession").value = "";
-        document.getElementById("age").value = "";
-
-        // Show success message
-        document.getElementById("success").innerHTML = "Employee added successfully";
-        document.getElementById("error").innerHTML = "";
-
-        // Update employee table
-        updateEmployeeTable();
-
-        // Increment employee ID
-        employeeId++;
-    }
-});
-
-// Function to update employee table
-function updateEmployeeTable() {
-    let employeeTable = document.getElementById("employeeList");
-    employeeTable.innerHTML = "";
-    for (let i = 0; i < employeeList.length; i++) {
-        let employee = employeeList[i];
-        let row = document.createElement("tr");
-        let idCell = document.createElement("td");
-        let nameCell = document.createElement("td");
-        let professionCell = document.createElement("td");
-        let ageCell = document.createElement("td");
-        let actionsCell = document.createElement("td");
-
-        idCell.innerHTML = employee.id;
-        nameCell.innerHTML = employee.name;
-        professionCell.innerHTML = employee.profession;
-        ageCell.innerHTML = employee.age;
 
         
-        // Create delete button
-  
-        let deleteBtn = document.createElement("button");
-deleteBtn.innerHTML = "Delete";
-deleteBtn.setAttribute("data-id", employee.id);
-deleteBtn.addEventListener("click", function() {
-    let employeeId = this.getAttribute("data-id");
-    for (let j = 0; j < employeeList.length; j++) {
-        if (employeeList[j].id == employeeId) {
-            employeeList.splice(j, 1);
-            employeeId--;
-            updateEmployeeTable();
-            break;
-        }
+        const a = document.getElementById('a')
+        a.style.display = 'none';
+
+        l.push({
+            name: name,
+            proffession: proffession,
+            age: age,})
     }
-});
 
-        actionsCell.appendChild(deleteBtn);
+    let tb = document.getElementById('tb')
+    tb.innerHTML = '';
 
-        row.appendChild(idCell);
-        row.appendChild(nameCell);
-        row.appendChild(professionCell);
-        row.appendChild(ageCell);
-        row.appendChild(actionsCell);
+    l.map((el, i)=> {
 
-        employeeTable.appendChild(row);
-    }
+        tb.innerHTML += `
+        <tbody>
+        <tr>
+        <td>${i+1}.</td>
+        <td>Name:${el.name}</td>
+        <td>Profession:${el.proffession}</td>
+        <td>Age:${el.age}</td>
+        <td><button onclick=d(${i}) type="button" class="btn">Delete</button></td>
+        </tr>
+        </tbody>
+        
+`
+    })
+
 }
+
+function d(el) {
+    delete l[el]
+    tb.innerHTML = ''
+    l.map((el, i)=> {
+
+        tb.innerHTML += `
+        <tbody>
+        <tr>
+        <td>${i+1}.</td>
+        <td>Name:${el.name}</td>
+        <td>Profession:${el.proffession}</td>
+        <td>Age:${el.age}</td>
+        <td><button onclick=d(${i}) type="button" class="btn">Delete</button></td>
+        </tr>
+        </tbody>
+`
+    })
+}
+console.log(tb)

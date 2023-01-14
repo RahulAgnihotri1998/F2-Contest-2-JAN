@@ -1,57 +1,49 @@
-body {
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
     background-color: black;
-}
-
-form {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-}
-
-form label {
     color: white;
-    margin-right: 10px;
 }
 
-form input {
-    margin-bottom: 10px;
+h2{
+    position: relative;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+
+input {
+    margin: 5px;
+}
+
+.boxes{
+    display: flex;
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+button{
+    margin-left: 30px;
+    width: 80px;
+    height: 32px;
+    margin-bottom: 15px;
+}
+.lower-text{
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
 }
 
 table {
-    margin: 10px auto;
-    border-collapse: collapse;
-    width: 100%;
-    background-color:white;
+    width: 50%;
+    margin-left: 30px;
 }
-
-table th,
-table td {
-    border: 1px solid white;
-    padding: 8px;
-}
-
-table th {
-    background-color: gray;
-    color: white;
-}
-
-table td {
-    text-align: center;
-}
-
-table button {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px 8px;
-    cursor: pointer;
-}
-
-table button:hover {
-    background-color: darkred;
-}
-
-#employeeTable {
+#a{
+    margin-left: 30px;
     margin-top: 10px;
 }
