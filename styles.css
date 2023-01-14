@@ -1,0 +1,57 @@
+body {
+    background-color: black;
+}
+
+form {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+form label {
+    color: white;
+    margin-right: 10px;
+}
+
+form input {
+    margin-bottom: 10px;
+}
+
+table {
+    margin: 10px auto;
+    border-collapse: collapse;
+    width: 100%;
+    background-color:white;
+}
+
+table th,
+table td {
+    border: 1px solid white;
+    padding: 8px;
+}
+
+table th {
+    background-color: gray;
+    color: white;
+}
+
+table td {
+    text-align: center;
+}
+
+table button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+table button:hover {
+    background-color: darkred;
+}
+
+#employeeTable {
+    margin-top: 10px;
+}
